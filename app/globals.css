@@ -1,0 +1,97 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* ─── PALETA OFICIAL MERLOS ─── */
+  --cor-fundo: #000322;
+  --cor-fundo-alt: #0C134D;
+  --cor-preta: #000000;
+
+  --cor-primaria: #FF0100;
+  --cor-primaria-pink: #FF0045;
+
+  --cor-texto: #FFFFFF;
+  --cor-texto-suave: #CADAE4;
+  --cor-cinza-claro: #BBCBD5;
+
+  --cor-borda-sutil: rgba(255,255,255,0.08);
+  --cor-overlay: rgba(0, 3, 34, 0.75);
+
+  /* Efeitos */
+  --glow-vermelho: 0 0 20px rgba(255,1,0,0.60);
+  --glow-pink: 0 0 20px rgba(255,0,69,0.50);
+  --glow-azul: 0 0 20px rgba(12,19,77,0.80);
+  --sombra-card: 0 4px 32px rgba(0,0,0,0.45);
+
+  /* Design tokens para shadcn */
+  --background: var(--cor-fundo);
+  --foreground: var(--cor-texto);
+  --card: var(--cor-fundo-alt);
+  --card-foreground: var(--cor-texto);
+  --popover: var(--cor-fundo-alt);
+  --popover-foreground: var(--cor-texto);
+  --primary: var(--cor-primaria);
+  --primary-foreground: var(--cor-texto);
+  --secondary: var(--cor-fundo-alt);
+  --secondary-foreground: var(--cor-texto);
+  --muted: var(--cor-fundo-alt);
+  --muted-foreground: var(--cor-texto-suave);
+  --accent: var(--cor-primaria-pink);
+  --accent-foreground: var(--cor-texto);
+  --destructive: var(--cor-primaria);
+  --destructive-foreground: var(--cor-texto);
+  --border: var(--cor-borda-sutil);
+  --input: var(--cor-borda-sutil);
+  --ring: var(--cor-primaria);
+  --radius: 0.625rem;
+}
+
+@theme inline {
+  --font-sans: 'Barlow', sans-serif;
+  --font-display: 'Bebas Neue', sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Scrollbar oculta para scroll horizontal */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Animações suaves - usando data-scroll-behavior no HTML */
